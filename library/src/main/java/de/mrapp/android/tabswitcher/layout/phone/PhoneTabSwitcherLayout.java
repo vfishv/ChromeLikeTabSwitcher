@@ -3391,19 +3391,19 @@ public class PhoneTabSwitcherLayout extends AbstractTabSwitcherLayout
     @Override
     public final void onSwipeEnded(@NonNull final TabItem tabItem, final boolean remove,
                                    final float velocity) {
-        if (remove) {
-            SwipeDirection direction =
-                    getArithmetics().getPosition(Axis.ORTHOGONAL_AXIS, tabItem) < 0 ?
-                            SwipeDirection.LEFT_OR_TOP : SwipeDirection.RIGHT_OR_BOTTOM;
-            long animationDuration =
-                    velocity > 0 ? Math.round((calculateSwipePosition() / velocity) * 1000) : -1;
-            Animation animation = new SwipeAnimation.Builder().setDirection(direction)
-                    .setDuration(animationDuration).create();
-            getModel().removeTab(tabItem.getTab(), animation);
-        } else {
+//        if (remove) {
+//            SwipeDirection direction =
+//                    getArithmetics().getPosition(Axis.ORTHOGONAL_AXIS, tabItem) < 0 ?
+//                            SwipeDirection.LEFT_OR_TOP : SwipeDirection.RIGHT_OR_BOTTOM;
+//            long animationDuration =
+//                    velocity > 0 ? Math.round((calculateSwipePosition() / velocity) * 1000) : -1;
+//            Animation animation = new SwipeAnimation.Builder().setDirection(direction)
+//                    .setDuration(animationDuration).create();
+//            getModel().removeTab(tabItem.getTab(), animation);
+//        } else {
             animateSwipe(tabItem, false, 0, new SwipeAnimation.Builder().create(),
                     createSwipeAnimationListener(tabItem));
-        }
+//        }
 
         getLogger().logVerbose(getClass(),
                 "Ended swiping tab at index " + tabItem.getIndex() + ". Tab will " +
