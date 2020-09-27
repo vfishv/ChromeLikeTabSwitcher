@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion project.TARGET_SDK_VERSION.toInteger()
-    buildToolsVersion project.BUILD_TOOLS_VERSION
+    //buildToolsVersion project.BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion project.MIN_SDK_VERSION.toInteger()
@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    api 'com.google.android.material:material:1.0.0'
+    api 'com.google.android.material:material:1.2.1'
     api project(':library')
 }
